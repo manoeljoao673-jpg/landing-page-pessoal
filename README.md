@@ -1,4 +1,7 @@
 # landing-page-pessoal
+
+Prompt Utilizado:
+
 Crie uma landing page pessoal completa utilizando HTML, CSS e JavaScript em um único arquivo (index.html), com design moderno e responsivo.
 
 A página deve ter tema em azul escuro e estilo profissional de portfólio.
