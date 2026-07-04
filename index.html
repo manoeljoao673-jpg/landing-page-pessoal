@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Manoel | Portfólio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #07152E;
+            color: white;
+        }
+
+        header {
+            height: 100vh;
+            background: linear-gradient(135deg, #07152E, #0E4EA5);
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            position: fixed;
+            width: 100%;
+            background: rgba(7, 21, 46, .85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #6FB7FF;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #6FB7FF;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            padding: 40px;
+        }
+
+        .hero-box {
+            max-width: 900px;
+            background: rgba(255, 255, 255, .08);
+            padding: 50px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, .12);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .hero h3 {
+            font-weight: 400;
+            color: #A9D5FF;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 15px 35px;
+            background: #2D83FF;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #529CFF;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 90px 10%;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: .8s;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #6FB7FF;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* Estilo específico para centralizar o card único de e-mail */
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            background: #10284D;
+            padding: 30px;
+            border-radius: 15px;
+            transition: .3s;
+            border: 1px solid rgba(255, 255, 255, .08);
+            width: 100%;
+        }
+
+        .contact-grid .card {
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .timeline {
+            border-left: 3px solid #2D83FF;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -39px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background: #2D83FF;
+            border-radius: 50%;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skills span {
+            background: #1C4E92;
+            padding: 12px 18px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        footer {
+            background: #04101E;
+            text-align: center;
+            padding: 35px;
+            margin-top: 60px;
+        }
+
+        @media(max-width:768px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-box {
+                padding: 30px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">João Manoel</div>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero">
+            <div class="hero-box">
+                <h1>João Manoel</h1>
+                <h3>Estudante de Engenharia de Produção • Estagiário de PCP</h3>
+                <p>
+                    Tenho <strong>21 anos</strong> e atualmente atuo como
+                    <strong>Estagiário de Planejamento e Controle da Produção (PCP)</strong>
+                    na <strong>Aeris Energy</strong>.
+                    Sou apaixonado por planejamento industrial, análise de dados, suprimentos e otimização de processos para tomada de decisões.
+                </p>
+                <a href="#sobre" class="btn">Conhecer Mais</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p style="font-size:18px;line-height:2;">
+            Olá! Meu nome é <strong>João Manoel</strong>, tenho <strong>21 anos</strong> e sou estudante de <strong>Engenharia de Produção</strong> no Instituto Federal do Ceará (IFCE).
+            <br><br>
+            Atualmente trabalho como <strong>Estagiário de Planejamento e Controle da Produção (PCP)</strong> na <strong>Aeris Energy</strong>, onde atuo no acompanhamento da produção, análise de indicadores de desempenho, suporte ao planejamento industrial e melhoria dos processos produtivos.
+            <br><br>
+            Anteriormente, tive a oportunidade de estagiar na <strong>ArcelorMittal Pecém</strong>, na área <strong>Comercial (Gerência de Compra de Sucata Metálica)</strong>, participando ativamente de negociações, desenvolvimento e gestão de fornecedores, além da análise de mercado voltada para o abastecimento estratégico de matérias-primas.
+            <br><br>
+            Também possuo experiência no varejo comercial, adquirida durante meu trabalho em uma loja de materiais de construção, desenvolvendo habilidades de comunicação, negociação direta, organização e atendimento ao cliente.
+            <br><br>
+            Tenho interesse em Planejamento e Controle da Produção, Gestão da Produção, Compras Estratégicas (Suprimentos), Gestão de Processos e Análise de Dados.
+        </p>
+    </section>
+
+    <section id="experiencia">
+        <h2>Experiência Profissional</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🏭 Aeris Energy</h3>
+                <h4>Estagiário de Planejamento e Controle da Produção (PCP)</h4>
+                <br>
+                <p>
+                    • Acompanhamento da programação da produção.<br><br>
+                    • Controle de indicadores industriais.<br><br>
+                    • Suporte ao planejamento e programação.<br><br>
+                    • Atualização de dashboards e controles.<br><br>
+                    • Apoio às rotinas do setor de PCP.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>⚙️ ArcelorMittal Pecém</h3>
+                <h4>Estagiário Comercial - Gerência de Compra de Sucata Metálica</h4>
+                <br>
+                <p>
+                    • Suporte no processo de compras e negociação de sucata metálica.<br><br>
+                    • Gestão, prospecção e homologação de fornecedores.<br><br>
+                    • Acompanhamento do fluxo logístico e recebimento de matérias-primas.<br><br>
+                    • Análise de mercado e elaboração de relatórios gerenciais.<br><br>
+                    • Controle de indicadores da área comercial e de suprimentos.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🛒 Loja de Material de Construção</h3>
+                <h4>Vendedor</h4>
+                <br>
+                <p>
+                    • Atendimento ao cliente.<br><br>
+                    • Organização administrativa.<br><br>
+                    • Controle de estoque.<br><br>
+                    • Apoio às operações comerciais.<br><br>
+                    • Negociação e vendas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="formacao">
+        <h2>Formação</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🎓 Engenharia de Produção</h3>
+                <p>Instituto Federal do Ceará (IFCE)</p>
+                <br>
+                <p>Graduação em andamento.</p>
+            </div>
+
+            <div class="card">
+                <h3>⚙️ Técnico em Metalurgia</h3>
+                <p>Instituto Federal do Ceará (IFCE)</p>
+                <br>
+                <p>Ensino Médio Integrado ao Curso Técnico.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Minha Jornada</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>🎓 IFCE</h3>
+                <p>Ingresso no curso Técnico em Metalurgia.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>🛒 Primeira Experiência Profissional</h3>
+                <p>Atuação como vendedor em loja de materiais de construção, desenvolvendo competências em atendimento, negociação e organização.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>⚙️ ArcelorMittal Pecém</h3>
+                <p>Estágio na Gerência de Compra de Sucata Metálica, com foco em negociações comerciais, gestão de fornecedores e inteligência de suprimentos.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>🏭 Aeris Energy</h3>
+                <p>Estágio em Planejamento e Controle da Produção (PCP), atuando diretamente nas rotinas de planejamento industrial.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>🚀 Objetivo</h3>
+                <p>Construir uma carreira sólida na Engenharia de Produção, integrando conhecimentos comerciais, suprimentos e PCP para otimizar processos industriais e decisões estratégicas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="habilidades">
+        <h2>Habilidades</h2>
+        <div class="skills">
+            <span>Excel Avançado</span>
+            <span>Power BI</span>
+            <span>AutoCAD</span>
+            <span>Planejamento e Controle da Produção (PCP)</span>
+            <span>PPCP</span>
+            <span>S&OP</span>
+            <span>Negociação Comercial</span>
+            <span>Gestão de Fornecedores</span>
+            <span>Análise de Dados</span>
+            <span>Indicadores de Desempenho (KPIs)</span>
+            <span>Pacote Office</span>
+            <span>Gestão de Processos</span>
+            <span>Planejamento Industrial</span>
+            <span>Suprimentos Estratégicos</span>
+        </div>
+
+        <br><br>
+        <h3>Competências</h3>
+        <br>
+        <p>Excel</p>
+        <progress value="90" max="100" style="width:100%;height:18px;"></progress>
+        <br><br>
+        <p>Power BI</p>
+        <progress value="80" max="100" style="width:100%;height:18px;"></progress>
+        <br><br>
+        <p>Planejamento e Controle da Produção</p>
+        <progress value="85" max="100" style="width:100%;height:18px;"></progress>
+        <br><br>
+        <p>Negociação e Compras</p>
+        <progress value="85" max="100" style="width:100%;height:18px;"></progress>
+        <br><br>
+        <p>AutoCAD</p>
+        <progress value="75" max="100" style="width:100%;height:18px;"></progress>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <div class="contact-grid">
+            <div class="card">
+                <h3>📧 E-mail</h3>
+                <p><a href="mailto:manoeljoao673@gmail.com" style="color:#6FB7FF;text-decoration:none;">manoeljoao673@gmail.com</a></p>
+            </div>
+        </div>
+        <br style="clear: both;">
+        <div style="text-align: center;">
+            <a class="btn" href="mailto:manoeljoao673@gmail.com">Enviar E-mail</a>
+        </div>
+    </section>
+
+    <footer>
+        <h2 style="color:white;">João Manoel</h2>
+        <br>
+        <p>Estudante de Engenharia de Produção • Estagiário de PCP na Aeris Energy</p>
+        <br>
+        <p>© 2026 Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll("section");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        });
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
